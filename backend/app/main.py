@@ -6,7 +6,8 @@ app = FastAPI()
 # Allow your frontend to talk to the backend without CORS errors
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Can be restricted to ["http://localhost:5173"] later
+    allow_origins=["http://localhost:5173",
+                  "https://whatsapp-clone-liard-three.vercel.app",],  # Can be restricted to ["http://localhost:5173"] later
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
