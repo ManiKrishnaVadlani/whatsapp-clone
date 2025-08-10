@@ -8,7 +8,7 @@ function App() {
 
   // Fetch conversation list
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/conversations")
+    fetch(import.meta.env.VITE_BACKEND_URL + "/conversations")
       .then((res) => res.json())
       .then((data) => setConversations(data))
       .catch((err) => console.error(err));
@@ -17,7 +17,7 @@ function App() {
   // Open a conversation
   const openConversation = (id) => {
     setActiveConv(id);
-    fetch(`http://127.0.0.1:8000/conversations/${id}`)
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/conversations/${id}`)
       .then((res) => res.json())
       .then((data) => setMessages(data))
       .catch((err) => console.error(err));
